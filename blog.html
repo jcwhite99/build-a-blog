@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+
+    <a href='./newpost'>Make a new post</a>
+
+
+
+    {% if blogs|length == 0 %}
+
+      <p>No blogs yet</p>
+
+
+
+    {% else %}
+
+      {% for blog in blogs|reverse %}
+
+
+
+      <hr />
+
+      <h2><a href='./blog?id={{blog.id}}'>{{blog.title}}</a></h2>
+
+      <p>{{blog.body}}</p>
+
+      {% endfor %}
+
+
+
+    {% endif %}
+
+
+
+    <hr />
+
+
+
+{% endblock %}
